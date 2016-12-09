@@ -3,11 +3,10 @@ This repo contains a tutorial intended to help a developer who is new to KBase l
 
 # Table of Contents
 1. [Introduction](#introduction)
-1. [Architecture](#architecture-&-core_services)
+1. [Architecture](#architecture-and-core_services)
 1. [Development Environments](#development-environments)
 1. [KBase SDK](#kbase-sdk)
-1. [Writing SDK Apps](#writing-sdk-apps)
-1. [Modifying the SDK](#modifying-the-sdk)
+1. [Working with the SDK](#working-with-the-sdk)
 1. [Data Services](#data-services)
 1. [Narrative](#narrative)
 1. [Testing](#testing)
@@ -19,7 +18,7 @@ background information necessary to be a confident and productive contributor to
 This intended to be a living document - if you have updates or extensions, please fork it and the submit
 a pull request.
 
-## Architecture & Core Services
+## Architecture and Core Services
 
    There are several major categories to the KBase applications architecture:
    * The KBase Narrative
@@ -180,7 +179,7 @@ that builds and releases the core CI services.
 The KBase SDK is fairly well documented in the (README document in Github)[https://github.com/kbase/kb_sdk]
 In addition, Mike Sneddon has a [detailed architecture slide deck](https://docs.google.com/presentation/d/18hxRC5enjA6kF-Ezn9xWdZ5xr2tg2c6LxBQXPxQ_5ik/edit?usp=sharing) that provides an overview of the SDK architecture.
 
-## Writing SDK Apps
+## Working with the SDK
 
    The layout of a KBase SDK App is described in
 [this document](https://github.com/kbase/kb_sdk/blob/master/doc/module_overview.md).
