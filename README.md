@@ -38,9 +38,14 @@ the architecture over time. The following diagram is current as of the beginning
 
 ## Development Environments
 
+This section discusses both the local development environment being used by the developer on their
+personal workstation, as well as the different environments (production, continuous integration, etc...)
+within the KBase service.
+
 ### The Local Development Environment
 
-In order to develop code for KBase API services and the Narrative, the following needs to be installed on the development host:
+In order to develop code for KBase API services and the Narrative, the following packages need to be
+installed on the development host:
 
 * [git tools](https://git-scm.com/doc), [minimally the command line tools](https://git-scm.com/downloads)
 * support for [Docker](https://www.docker.com/)
@@ -53,7 +58,9 @@ In order to develop code for KBase API services and the Narrative, the following
 * A suitable code editor [see our recommendations below](#integrated_development_environment)
 
 We assume that the developer is familiar with git, and especially the common [github workflows](https://guides.github.com/introduction/flow/),
-as the [KBase source code is all kept in Github](https://github.com/kbase).
+as the [KBase source code is all kept in Github](https://github.com/kbase). Changes to existing KBase
+code is handled by branching and then submitting pull requests, using the conventional Github workflow.
+For core KBase services, *development should not occur on the master branch*.
 
 ### Docker
 
@@ -77,13 +84,96 @@ IDEs provide significant benefits for developers in terms of code checking and s
 promotes the use of lightweight IDEs for developers who are not currently using an IDE, and for developers
 who are already using an IDE, we recommend code validation tools and standard configurations.
 
-[This document](https://github.com/kbase/project_guides/blob/master/RecommendedEditors.md) describes the recommended editors and configurations.
+[This document](https://github.com/kbase/project_guides/blob/master/RecommendedEditors.md) describes
+the recommended editors and configurations. Briefly, Atom, Visual Studio Code and Sublime are recommended,
+with the emphasis on Atom and VS Code because they are entirely free, whereas Sublime implements "nagware"
+until the user purchases a license.
 
 Python code contributed to KBase should conform to PEP8 guidelines and also pass the flake8+putty configuration described this
-[tox.ini file](https://github.com/kbase/kb_sdk/blob/develop/tox.ini)
+[tox.ini file](https://github.com/kbase/kb_sdk/blob/develop/tox.ini). Atom, VS Code and CI platforms such
+as Travis CI have support for tox.ini files, centralizing configuration.
 
 ### Production, CI, Next, AppDev Environments
 
+Currently ( 12/2016 ) KBase operates 4 environments in its overall service, each environment has
+its own set of services, with disjunct collections of narratives and data:
+
+* Production - the environment where KBase users run their applications and store their data.
+the main entrypoint for this environment is narrative.kbase.us for narratives, and the main web service
+endpoint is via kbase.us
+
+* Continuous Integration (CI) - this environment is intended for rapidly deploying developer SDK apps into
+a full environment with Narrative, Auth, Data Services, Execution engines, etc... It is primarily for
+the use of developers when they are ready to integrate their SDK apps into the KBase framework. The
+endpoint for Narrative is ci.kbase.us whereas the endpoint for API services is ci.kbase.us/services
+
+* Next - this was originally created as an environment for testing the core KBase platform, such as
+the Narrative, Data Services, Auth, etc... this was originally motivated by a structural difference
+in build and deployment for these core services vs SDK apps. As of 12/2016, the build and deployment
+models for the core services and SDK apps have been consolidated. Next is likely to be retired in the
+near future, and the integration testing of core services rolled into the CI environment. The entrypoints
+are next.kbase.us and next.kbase.us/services/ for narratives and API services respectively.
+
+* AppDev - this is intended as a merge point between the CI environment (for developer apps) and the Next
+environment (for core KBase services) to ensure that developer apps integrate properly with changes to
+the core platform. This is the last environment for testing/validation before release into production.
+The entrypoints are appdev.kbase.us and appdev.kbase.us/services.
+
+Each of these environments has their own set of service endpoints, and for the most part they have
+distinct collections of narratives, workspaces, personal datasets, sample data, etc... and there are
+not currently convenient procedures for migrating narratives and data from environment to environment.
+Configuring apps and services to run in each environment is generally handled via a lookup table for
+each service. An example configuration file ( extracted from the narrative repo )
+[can be found here](sample_files/config.json).
+
+The following JSON fragment from that file provides metadata about the overall configuration file, sets
+the current environment to "appdev" via the _"config": "appdev"_  line and declares the endpoints for
+the AppDev environment, with a dictionary identifying the set of endpoints for AppDev, each endpoint
+keyed on the service name with the value set to the API endpoint.
+
+~~~JSON
+{
+    "config": "appdev",
+    "name": "KBase Narrative",
+    "version": "3.1.0-alpha-4",
+    "dev_mode": true,
+    "git_commit_hash": "60e2219",
+    "git_commit_time": "Thu Mar 3 15:44:21 2016 -0800",
+    "features": {
+        "advanced": false,
+        "developer": false
+    },
+    "release_notes": "https://github.com/kbase/narrative/blob/staging/RELEASE_NOTES.md",
+    "tooltip": {
+        "hideDelay": 0,
+        "showDelay": 750
+    },
+    "use_local_widgets": true,
+    "loading_gif": "/narrative/static/kbase/images/ajax-loader.gif",
+    "appdev": {
+        "ftp_api_url": "https://appdev.kbase.us/services/kb-ftp-api/v0",
+        "ftp_api_root": "/data/bulk",
+        "awe": "https://appdev.kbase.us/services/awe-api",
+        "catalog": "https://appdev.kbase.us/services/catalog",
+        "cdn": "https://appdev.kbase.us/cdn/files",
+        "data_import_export": "https://appdev.kbase.us/services/data_import_export",
+        "data_panel_sources": "/data_source_config.json",
+        "fba": "https://appdev.kbase.us/services/KBaseFBAModeling/",
+        "feature_values": "https://appdev.kbase.us/services/feature_values/jsonrpc",
+        "gene_families": "https://appdev.kbase.us/services/gene_families",
+        "genomeCmp": "https://appdev.kbase.us/services/genome_comparison/jsonrpc",
+        "job_service": "https://appdev.kbase.us/services/njs_wrapper",
+        "landing_pages": "/#dataview/",
+        "log_proxy_host": "172.17.42.1",
+        "log_proxy_port": 32001,
+
+~~~
+
+Releases into each of these environments is currently being converted into Jenkins jobs, with the
+goal of making all release procedures triggered via Jenkins. Here is a sample console from the task
+that builds and releases the core CI services.
+
+![Jenkins Release console](images/jenkins_screenshot.png)
 
 ## KBase SDK
 
