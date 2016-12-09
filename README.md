@@ -188,8 +188,8 @@ In addition, Mike Sneddon has a [detailed architecture slide deck](https://docs.
 
 ### Building A self-contained SDK App: ContigFilter
 
-The ContigFilter application is provided as an example project within the KB_SDK, walking through
-the 
+The ContigFilter application is provided as an example project within the KB_SDK, [walking through
+the example](https://github.com/kbase/kb_sdk/blob/master/doc/kb_sdk_dependencies.md) is an excellent intro to SDK development.
 
 #### datafile_utils
 #### kbasereports
