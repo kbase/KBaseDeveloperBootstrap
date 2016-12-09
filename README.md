@@ -19,15 +19,26 @@ background information necessary to be a confident and productive contributor to
 This intended to be a living document - if you have updates or extensions, please fork it and the submit
 a pull request.
 
-## Architecture
+## Architecture & Core Services
+
+   There are several major categories to the KBase applications architecture:
+   * The KBase Narrative
+   * KBase Applications Services (SDK)
+   * KBase Dynamic Services
+   * KBase Data Services
+   * Execution Engine (AWE)
+   * Authentication and User Profile
+
+   Note that this does not include the Wordpress based website. The relationships
+between the service categories is somewhat complex, but ongoing work will simplify
+the architecture over time. The following diagram is current as of the beginning of 2017.
 
 ![KBase Architecture](images/KBaseSoftwareArchitecture.png)
 
-## Core Services
 
-wahwah wahwah wahwah
+## Development Environments
 
-## A Local Development Environment
+### The Local Development Environment
 
 In order to develop code for KBase API services and the Narrative, the following needs to be installed on the development host:
 
@@ -71,26 +82,34 @@ who are already using an IDE, we recommend code validation tools and standard co
 Python code contributed to KBase should conform to PEP8 guidelines and also pass the flake8+putty configuration described this
 [tox.ini file](https://github.com/kbase/kb_sdk/blob/develop/tox.ini)
 
+### Production, CI, Next, AppDev Environments
+
+
 ## KBase SDK
 
 The KBase SDK is fairly well documented in the (README document in Github)[https://github.com/kbase/kb_sdk]
 In addition, Mike Sneddon has a [detailed architecture slide deck](https://docs.google.com/presentation/d/18hxRC5enjA6kF-Ezn9xWdZ5xr2tg2c6LxBQXPxQ_5ik/edit?usp=sharing) that provides an overview of the SDK architecture.
 
-## An SDK App
+## Writing SDK Apps (Day Two)
 
    The layout of a KBase SDK App is described in
 [this document](https://github.com/kbase/kb_sdk/blob/master/doc/module_overview.md).
    A collection of SDK documentation references is [being maintained here](https://docs.google.com/document/d/1J6HJGtIoAY9yDI6N9xDyarH8vT7tCao2ZBzvVwLEOdw/edit#) as well.
 ## Modifying the SDK
 
-made ya look!
+### Building A self-contained SDK App: ContigFilter
 
-## Workspace
+### Wrapping an existing tool
+
+### Updating the SDK itself
+
+## Workspace (Day Three)
 
 The [workspace service](https://github.com/kbase/workspace_deluxe) is the main storage abstraction that most users will have to deal with when
 working on narratives and data objects. The API is [documented here](https://ci.kbase.us/services/ws/docs/).
 
-## Narrative
+## Narrative (Day Four)
 
 okay, that's all I had
 
+## Testing (Day Five)
