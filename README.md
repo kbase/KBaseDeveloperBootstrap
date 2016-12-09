@@ -3,14 +3,14 @@ This repo contains a tutorial intended to help a developer who is new to KBase l
 
 # Table of Contents
 1. [Introduction](#introduction)
-1. [Architecture](#architecture)
-1. [Core Services](#core-services)
-1. [A Local Development Environment](#a-local-development-environment)
+1. [Architecture](#architecture-&-core_services)
+1. [Development Environments](#development-environments)
 1. [KBase SDK](#kbase-sdk)
-1. [An SDK App](#an-sdk-app)
+1. [Writing SDK Apps](#writing-sdk-apps)
 1. [Modifying the SDK](#modifying-the-sdk)
-1. [Workspace](#workspace)
+1. [Data Services](#data-services)
 1. [Narrative](#narrative)
+1. [Testing](#testing)
 
 ## Introduction
 
@@ -180,7 +180,7 @@ that builds and releases the core CI services.
 The KBase SDK is fairly well documented in the (README document in Github)[https://github.com/kbase/kb_sdk]
 In addition, Mike Sneddon has a [detailed architecture slide deck](https://docs.google.com/presentation/d/18hxRC5enjA6kF-Ezn9xWdZ5xr2tg2c6LxBQXPxQ_5ik/edit?usp=sharing) that provides an overview of the SDK architecture.
 
-## Writing SDK Apps (Day Two)
+## Writing SDK Apps
 
    The layout of a KBase SDK App is described in
 [this document](https://github.com/kbase/kb_sdk/blob/master/doc/module_overview.md).
@@ -205,13 +205,13 @@ the example](https://github.com/kbase/kb_sdk/blob/master/doc/kb_sdk_dependencies
 
 #### Updating NJS wrapper
 
-## Data Services (Day Three)
+## Data Services
 
 The [workspace service](https://github.com/kbase/workspace_deluxe) is the main storage abstraction that most users will have to deal with when
 working on narratives and data objects. The API is [documented here](https://ci.kbase.us/services/ws/docs/).
 
-## Narrative (Day Four)
+## Narrative
 
 okay, that's all I had
 
-## Testing (Day Five)
+## Testing
