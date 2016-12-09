@@ -3,7 +3,7 @@ This repo contains a tutorial intended to help a developer who is new to KBase l
 
 # Table of Contents
 1. [Introduction](#introduction)
-1. [Architecture](#architecture-and-core_services)
+1. [Architecture and Core Services](#architecture-and-core-services)
 1. [Development Environments](#development-environments)
 1. [KBase SDK](#kbase-sdk)
 1. [Working with the SDK](#working-with-the-sdk)
