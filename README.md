@@ -185,15 +185,27 @@ In addition, Mike Sneddon has a [detailed architecture slide deck](https://docs.
    The layout of a KBase SDK App is described in
 [this document](https://github.com/kbase/kb_sdk/blob/master/doc/module_overview.md).
    A collection of SDK documentation references is [being maintained here](https://docs.google.com/document/d/1J6HJGtIoAY9yDI6N9xDyarH8vT7tCao2ZBzvVwLEOdw/edit#) as well.
-## Modifying the SDK
 
 ### Building A self-contained SDK App: ContigFilter
 
+The ContigFilter application is provided as an example project within the KB_SDK, walking through
+the 
+
+#### datafile_utils
+#### kbasereports
+#### wslargeio
+
 ### Wrapping an existing tool
+
+### Debugging SDK apps - kb_sdk test
 
 ### Updating the SDK itself
 
-## Workspace (Day Three)
+#### Changing the code generation templates
+
+#### Updating NJS wrapper
+
+## Data Services (Day Three)
 
 The [workspace service](https://github.com/kbase/workspace_deluxe) is the main storage abstraction that most users will have to deal with when
 working on narratives and data objects. The API is [documented here](https://ci.kbase.us/services/ws/docs/).
