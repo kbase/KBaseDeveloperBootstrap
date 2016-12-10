@@ -1,5 +1,7 @@
 # KBaseDeveloperBootstrap
-This repo contains a tutorial intended to help a developer who is new to KBase learn the architecture, conventions and basic APIs and services well enough to become a productive developer on the platform.
+This repo contains a tutorial intended to help a developer who is new to KBase learn the
+architecture, conventions and basic APIs and services well enough to become a productive developer
+on the platform.
 
 # Table of Contents
 1. [Introduction](#introduction)
@@ -206,8 +208,12 @@ the example](https://github.com/kbase/kb_sdk/blob/master/doc/kb_sdk_dependencies
 
 ## Data Services
 
-The [workspace service](https://github.com/kbase/workspace_deluxe) is the main storage abstraction that most users will have to deal with when
-working on narratives and data objects. The API is [documented here](https://ci.kbase.us/services/ws/docs/).
+| Service | Best available documentation | Github repo |
+|---|---|---|
+| Workspace | [Links for ci / next / etc. docs](https://github.com/kbase/workspace_deluxe#getting-documentation) | [Repo](https://github.com/kbase/workspace_deluxe) |
+| Shock | [Docs](https://github.com/MG-RAST/Shock/wiki) | [Repo](https://github.com/MG-RAST/Shock/) |
+| Handle Service | [KIDL spec](https://github.com/kbase/handle_service/blob/master/handle_service.spec) | [Repo](https://github.com/kbase/handle_service/) |
+| Handle Manager | [KIDL spec](https://github.com/kbase/handle_mngr/blob/master/handle_mngr.spec) | [Repo](https://github.com/kbase/handle_mngr/) |
 
 ## Narrative
 
