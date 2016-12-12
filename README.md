@@ -10,7 +10,7 @@ on the platform.
 1. [KBase SDK](#kbase-sdk)
 1. [Working with the SDK](#working-with-the-sdk)
 1. [Data Services](#data-services)
-1. [Narrative](#narrative)
+1. [Front End](#front-end)
 1. [Testing](#testing)
 
 ## Introduction
@@ -178,7 +178,7 @@ that builds and releases the core CI services.
 
 ## KBase SDK
 
-The KBase SDK is fairly well documented in the (README document in Github)[https://github.com/kbase/kb_sdk]
+The KBase SDK is fairly well documented in the [README document in Github](https://github.com/kbase/kb_sdk)
 In addition, Mike Sneddon has a [detailed architecture slide deck](https://docs.google.com/presentation/d/18hxRC5enjA6kF-Ezn9xWdZ5xr2tg2c6LxBQXPxQ_5ik/edit?usp=sharing) that provides an overview of the SDK architecture.
 
 ## Working with the SDK
@@ -215,8 +215,10 @@ the example](https://github.com/kbase/kb_sdk/blob/master/doc/kb_sdk_dependencies
 | Handle Service | [KIDL spec](https://github.com/kbase/handle_service/blob/master/handle_service.spec) | [Repo](https://github.com/kbase/handle_service/) |
 | Handle Manager | [KIDL spec](https://github.com/kbase/handle_mngr/blob/master/handle_mngr.spec) | [Repo](https://github.com/kbase/handle_mngr/) |
 
-## Narrative
+## Front End
 
-okay, that's all I had
+### Narrative
+
+### KBase-UI
 
 ## Testing
