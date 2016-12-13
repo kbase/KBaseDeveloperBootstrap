@@ -181,6 +181,8 @@ that builds and releases the core CI services.
 The KBase SDK is fairly well documented in the [README document in Github](https://github.com/kbase/kb_sdk)
 In addition, Mike Sneddon has a [detailed architecture slide deck](https://docs.google.com/presentation/d/18hxRC5enjA6kF-Ezn9xWdZ5xr2tg2c6LxBQXPxQ_5ik/edit?usp=sharing) that provides an overview of the SDK architecture.
 
+Within this tutorial repo is a [page that captures additional documentation on the SDK](sdk_notes.md) that isn't in the 2 docs referenced above.
+
 ## Working with the SDK
 
    The layout of a KBase SDK App is described in
