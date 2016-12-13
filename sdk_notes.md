@@ -11,7 +11,14 @@ https://narrative.kbase.us/#catalog
 The Google Doc that describes the Narrative UI Specification file can be found here:
 [https://docs.google.com/document/d/1CZ1GOKsRr1NsScG9E2EesJyk_ViOrM9OazrVFKCkyHs/edit?usp=sharing](https://docs.google.com/document/d/1CZ1GOKsRr1NsScG9E2EesJyk_ViOrM9OazrVFKCkyHs/edit?usp=sharing)
 
-For archival purposes, there is a PDF snapshot of the document [included in this repo](.
+For archival purposes, there is a PDF snapshot of the document [included in this repo](sample_files/NarrativeUIMethodSpecification.pdf).
+This local copy is likely to be out of date at the time the reader looks at it, but may be useful in case the Google Doc is unavailable.
+
+The following code fragment is an example from the Megahit repo and has some annotation using Javascript comments "//" inline.
+A large portion of the file has been removed so that the "behavior" property can be focused on - this controls the interaction
+between the front end form fields displayed in Narrative App Cells, and the backend API call. Sections that have been deleted
+are noted with elipses "..."
+
 ~~~
 {
 	"ver": "1.0.4",
@@ -26,138 +33,9 @@ For archival purposes, there is a PDF snapshot of the document [included in this
 		"input": null,
 		"output": "no-display"
 	},
-	"parameters": [ 
-		{
-			"id": "read_library_ref",
-			"optional": false,
-			"advanced": false,
-			"allow_multiple": false,
-			"default_values": [ "" ],
-			"field_type": "text",
-			"text_options": {
-				"valid_ws_types": ["KBaseAssembly.PairedEndLibrary","KBaseFile.PairedEndLibrary"]
-			}
-		},
-		{
-		    "id" : "output_contigset_name",
-		    "optional" : false,
-		    "advanced" : false,
-		    "allow_multiple" : false,
-		    "default_values" : [ "MEGAHIT.contigs" ],
-		    "field_type" : "text",
-		    "text_options" : {
-		     	"valid_ws_types" : [ "KBaseGenomeAnnotations.Assembly" ],
-		    	"is_output_name":true
-		    }
-		},
-		{
-		    "id" : "megahit_parameter_preset",
-		    "optional" : true,
-		    "advanced" : false,
-		    "allow_multiple" : false,
-		    "default_values" : [ "" ],
-		    "field_type" : "dropdown",
-		    "dropdown_options":{
-		      "options": [
-		        {
-		          "value": "meta",
-		          "display": "meta - General metagenome assembly, e.g. gut"
-		        },
-		        {
-		          "value": "meta-sensitive",
-		          "display": "meta-sensitive - More sensitive assembly, but slower"
-		        },
-		        {
-		          "value": "meta-large",
-		          "display": "meta-large - Large and complex assembly, e.g. soil"
-		        },
-		        {
-		          "value": "bulk",
-		          "display": "bulk - (experimental) bulk sequencing assembly"
-		        },
-		        {
-		          "value": "single-cell",
-		          "display": "single-cell - (experimental) single-cell assembly"
-		        }
-		      ]
-		    }
-		},
-		{
-		    "id" : "min_count",
-		    "optional" : true,
-		    "advanced" : true,
-		    "allow_multiple" : false,
-		    "default_values" : [ "" ],
-		    "field_type" : "text",
-			"text_options" : {
-			    "validate_as": "int"
-		    }
-		},
-		{
-		    "id" : "k_min",
-		    "optional" : true,
-		    "advanced" : true,
-		    "allow_multiple" : false,
-		    "default_values" : [ "" ],
-		    "field_type" : "text",
-			"text_options" : {
-			    "validate_as": "int",
-      			"min_int" : 1,
-      			"max_int" : 127
-		    }
-		},
-		{
-		    "id" : "k_max",
-		    "optional" : true,
-		    "advanced" : true,
-		    "allow_multiple" : false,
-		    "default_values" : [ "" ],
-		    "field_type" : "text",
-			"text_options" : {
-			    "validate_as": "int",
-      			"min_int" : 1,
-      			"max_int" : 127
-		    }
-		},
-		{
-		    "id" : "k_step",
-		    "optional" : true,
-		    "advanced" : true,
-		    "allow_multiple" : false,
-		    "default_values" : [ "" ],
-		    "field_type" : "text",
-			"text_options" : {
-			    "validate_as": "int",
-      			"min_int" : 1,
-      			"max_int" : 28
-		    }
-		},
-		{
-		    "id" : "k_list",
-		    "optional" : true,
-		    "advanced" : true,
-		    "allow_multiple" : true,
-		    "default_values" : [ "" ],
-		    "field_type" : "text",
-			"text_options" : {
-			    "validate_as": "int",
-      			"min_int" : 15,
-      			"max_int" : 127
-		    }
-		},
-		{
-		    "id" : "min_contig_len",
-		    "optional" : true,
-		    "advanced" : true,
-		    "allow_multiple" : false,
-		    "default_values" : [ "" ],
-		    "field_type" : "text",
-			"text_options" : {
-			    "validate_as": "int",
-      			"min_int" : 1
-		    }
-		}
-	],
+
+    ...
+
 	"behavior": { 
 		"service-mapping": { // This is the main attribute you will use
 			"url": "",
@@ -177,34 +55,7 @@ For archival purposes, there is a PDF snapshot of the document [included in this
 					"input_parameter": "output_contigset_name",
           			"target_property": "output_contigset_name"
 				},
-				{
-					"input_parameter": "megahit_parameter_preset",
-          			"target_property": "megahit_parameter_preset"
-				},
-				{
-					"input_parameter": "min_count",
-          			"target_property": "min_count"
-				},
-				{
-					"input_parameter": "k_min",
-          			"target_property": "k_min"
-				},
-				{
-					"input_parameter": "k_max",
-          			"target_property": "k_max"
-				},
-				{
-					"input_parameter": "k_step",
-          			"target_property": "k_step"
-				},
-				{
-					"input_parameter": "k_list",
-          			"target_property": "k_list"
-				},
-				{
-					"input_parameter": "min_contig_len",
-          			"target_property": "min_contig_len"
-				}
+    ...
 			],
 			"output_mapping": [ //map from output object from KIDL to UI fields
                                 // if there is a declaration with "input_parameter"
