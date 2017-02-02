@@ -176,6 +176,10 @@ that builds and releases the core CI services.
 
 ![Jenkins Release console](images/jenkins_screenshot.png)
 
+This diagram is current as of Feb 2017 and shows an abstracted view of the relationships between
+the environments and Jenkins.
+![Jenkins Interaction with Environments](images/RelEngSimple.png)
+
 ## KBase SDK
 
 The KBase SDK is fairly well documented in the [README document in Github](https://github.com/kbase/kb_sdk)
