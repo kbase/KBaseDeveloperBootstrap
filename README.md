@@ -229,7 +229,7 @@ are noted with elipses "..."
 			"input_mapping": [ // Mapping between input form fields to the parameters in the KIDL spec
 				{
 					"narrative_system_variable": "workspace", // Internal value/variable in narrative
-					"target_property": "workspace_name" // the workspace where this should run in the app
+					"target_property": "workspace_name" // the workspace where this app is being run
 				},
 				{
 					"input_parameter": "read_library_ref", // Form field on the app input form
