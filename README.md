@@ -211,7 +211,7 @@ are noted with elipses "..."
 	"authors": [
 		"msneddon"
 	],
-	"contact": "help@kbase.us",
+	"contact": "http://kbase.us/contact-us/",
 	"visible": true,
 	"categories": ["active","assembly","communities"],
 	"widgets": {
@@ -238,7 +238,7 @@ are noted with elipses "..."
 				},
 				{
 					"input_parameter": "output_contigset_name",
-          			"target_property": "output_contigset_name"
+          				"target_property": "output_contigset_name"
 				},
     ...
 			],
