@@ -2,7 +2,7 @@
 
 The provenance system is an core part of KBase's value as a scientific platform, consequently it is important that provenance information be properly stored.
 
-A basic guideline for getting provenance right is to make use of the [DataFileUtils](https://narrative.kbase.us/#catalog/modules/DataFileUtil) module to handle input and output of objects/files. This utility module handles properly generating the [provenance objects](https://ci.kbase.us/services/ws/docs/Workspace.html#typedefWorkspace.ProvenanceAction) in a workspace object that are used to track provenance.
+A basic guideline for getting provenance right is to make use of the [DataFileUtils](https://narrative.kbase.us/#catalog/modules/DataFileUtil)(DFU) module or a type specific module that uses DFU under the hood (such as [AssemblyUtil](https://narrative.kbase.us/#catalog/modules/AssemblyUtil)) to handle input and output of objects/files. The DFU utility module handles properly generating the [provenance objects](https://ci.kbase.us/services/ws/docs/Workspace.html#typedefWorkspace.ProvenanceAction) in a workspace object that are used to track provenance.
 
 For any given object in KBase, it is possible to see the detailed provenance information for an object by first selecting an object from the narrative data panel, and clicking on the "Explore Data" icon:
 
