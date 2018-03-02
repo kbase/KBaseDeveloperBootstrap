@@ -7,7 +7,7 @@ on the platform.
 1. [Introduction](#introduction)
 1. [Architecture and Core Services](#architecture-and-core-services)
 1. [Development Environments](#development-environments)
-1. [Code Requirements and Guidelines](#code-requirments-and-guidelines)
+1. [Code Requirements and Guidelines](#code-requirements-and-guidelines)
 1. [KBase SDK](#kbase-sdk)
 1. [Working with the SDK](#working-with-the-sdk)
 1. [Data Services](#data-services)
@@ -57,7 +57,7 @@ installed on the development host:
 * a reasonably current [NodeJS](https://nodejs.org/en/) installation
 * [Bower](https://bower.io/)
 * [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) ( for MacOS only )
-* A suitable code editor [see our recommendations below](#integrated_development_environment)
+* A suitable code editor [see our recommendations below](#integrated-development-environment)
 
 We assume that the developer is familiar with git, and especially the common [github workflows](https://guides.github.com/introduction/flow/),
 as the [KBase source code is all kept in Github](https://github.com/kbase). Changes to existing KBase
