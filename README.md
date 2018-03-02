@@ -7,6 +7,7 @@ on the platform.
 1. [Introduction](#introduction)
 1. [Architecture and Core Services](#architecture-and-core-services)
 1. [Development Environments](#development-environments)
+1. [Code Requirements and Guidelines](#code-requirments-and-guidelines)
 1. [KBase SDK](#kbase-sdk)
 1. [Working with the SDK](#working-with-the-sdk)
 1. [Data Services](#data-services)
@@ -179,6 +180,17 @@ that builds and releases the core CI services.
 This diagram is current as of Feb 2017 and shows an abstracted view of the relationships between
 the environments and Jenkins.
 ![Jenkins Interaction with Environments](images/RelEngSimple.png)
+
+## Code Requirements And Guidelines
+
+A [previously linked document](https://github.com/kbase/project_guides/blob/master/RecommendedEditors.md) contains some
+requirements for coding standards - please review it.
+[Code Reviews](https://github.com/kbase/project_guides/blob/master/CodeReviews.md) are required
+for all code added to the KBase system.
+
+[This presentation](https://docs.google.com/presentation/d/1_SrBxGbWU53UNn2sM6KhR2fsbywjjxi2qn3mtloU81A/edit#slide=id.p)
+ covers some coding best practices specific to KBase.
+
 
 ## KBase SDK
 
