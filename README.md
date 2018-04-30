@@ -298,21 +298,11 @@ private KBase instance entirely on their local machine via Rancher.
 ### Building A self-contained SDK App: ContigFilter
 
 The ContigFilter application is provided as an example project within the KB_SDK, [walking through
-the example](https://github.com/kbase/kb_sdk/blob/master/doc/kb_sdk_dependencies.md) is an excellent intro to SDK development.
+the example](https://github.com/kbase/kb_sdk/blob/master/doc/tutorial/overview.md) is an excellent intro to SDK development.
 
-#### datafile_utils
-#### kbasereports
-#### wslargeio
+### Additional guides and documentation
 
-### Wrapping an existing tool
-
-### Debugging SDK apps - kb_sdk test
-
-### Updating the SDK itself
-
-#### Changing the code generation templates
-
-#### Updating NJS wrapper
+Also see the list of **[How-to Articles](https://github.com/kbase/kb_sdk/#how-to-articles)** and [additional documentation](https://github.com/kbase/kb_sdk/#additional-documentation) from the `kb_sdk` readme.
 
 ## Data Services
 
