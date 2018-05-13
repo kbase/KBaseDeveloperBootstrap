@@ -293,7 +293,6 @@ private KBase instance entirely on their local machine via Rancher.
 
    The layout of a KBase SDK App is described in
 [this document](https://github.com/kbase/kb_sdk/blob/master/doc/module_overview.md).
-   A collection of SDK documentation references is [being maintained here](https://docs.google.com/document/d/1J6HJGtIoAY9yDI6N9xDyarH8vT7tCao2ZBzvVwLEOdw/edit#) as well.
 
 ### Building A self-contained SDK App: ContigFilter
 
